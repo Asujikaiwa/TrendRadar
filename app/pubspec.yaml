@@ -1,0 +1,42 @@
+name: trendradar
+description: "TrendRadar — Thai trend-intelligence app for online sellers & marketers."
+publish_to: "none"
+
+# Semantic versioning: <marketing>+<build>. The build number MUST increase on
+# every store upload. Min-version policy is enforced at runtime via Remote Config.
+version: 0.1.0+1
+
+environment:
+  # Pinned to the toolchain installed on this machine (Flutter 3.44.6 / Dart 3.12.2).
+  sdk: ">=3.12.0 <4.0.0"
+  flutter: ">=3.44.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # --- State management (unidirectional, testable) ---
+  flutter_riverpod: 2.6.1
+
+  # --- Navigation (declarative, deep-link ready) ---
+  go_router: 14.8.1
+
+  # --- UI / design system ---
+  cupertino_icons: 1.0.8
+  google_fonts: 8.1.0 # Ships IBM Plex Sans Thai (design direction ก)
+  fl_chart: 1.0.0 # Trend interest sparkline / line chart
+
+  # --- Platform / i18n / storage ---
+  intl: 0.20.2 # Pinned by flutter_localizations (Flutter 3.44.6 SDK)
+  shared_preferences: 2.3.2 # Non-secret local prefs (locale, theme, consent flag)
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 4.0.0
+
+flutter:
+  uses-material-design: true
+  generate: false # Localization is hand-authored & typed (see core/l10n).
